@@ -125,7 +125,7 @@ def analyze_sentiment_custom(reviews):
 # ✅ Ana fonksiyon
 def main():
     start_time = time.time()
-    category_url = "https://www.amazon.com.tr/gp/bestsellers/sporting-goods/13484252031/ref=zg_bs_nav_sporting-goods_1"
+    category_url = "https://www.amazon.com.tr/gp/bestsellers/home/ref=zg_bs_nav_home_0"
     driver = setup_driver()
 
     try:
@@ -151,8 +151,8 @@ def main():
             print("\n✅ Final Data to be saved in CSV:")
             print(sentiment_df)
 
-            sentiment_df.to_csv("amazon_reviews_roberta_sentiment2.csv", index=False)
-            print("✅ Sentiment analysis complete. Results saved to 'amazon_reviews_roberta_sentiment.csv'.")
+            sentiment_df.to_csv("amazon_reviews_roberta_sentiment10.csv", index=False)
+            print("✅ Sentiment analysis complete. Results saved to 'amazon_reviews_roberta_sentiment10.csv'.")
         else:
             print("❌ No reviews to save! Check scraping and translation.")
 

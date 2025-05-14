@@ -6,10 +6,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
 from transformers import XLMRobertaTokenizer, XLMRobertaForSequenceClassification
 from torch.utils.data import Dataset
-from transformers import Trainer, TrainingArguments, TrainerCallback
+from transformers import Trainer, TrainingArguments, TrainerCallback, EarlyStoppingCallback
 
 # 1. Verileri oku ve birleştir
-data_dir = "reviews"  # klasör adı
+data_dir = "reviews"
 
 csv_files = [
     "de_it_fr_es_reviews.csv",
@@ -18,7 +18,6 @@ csv_files = [
     "tr_reviews.csv"
 ]
 
-# CSV'leri oku ve birleştir
 df_list = [pd.read_csv(os.path.join(data_dir, file)) for file in csv_files]
 df = pd.concat(df_list, ignore_index=True)
 
@@ -66,8 +65,8 @@ print("✅ Model yüklendi: xlm-roberta-base")
 # 7. Eğitim ayarları (güncellenmiş)
 training_args = TrainingArguments(
     output_dir="./roberta_sentiment",
-    num_train_epochs=4,  # 4 Epoch
-    per_device_train_batch_size=8,  # Daha stabil öğrenme
+    num_train_epochs=6,  # ⬅️ Epoch sayısı artırıldı (4 → 6)
+    per_device_train_batch_size=8,
     per_device_eval_batch_size=8,
     warmup_steps=500,
     weight_decay=0.01,
@@ -97,19 +96,22 @@ def compute_metrics(eval_pred):
         "f1": f1_score(labels, preds, average="macro"),
     }
 
-# 9. Callback
+# 9. Callback sınıfları
 class PrintCallback(TrainerCallback):
     def on_epoch_end(self, args, state, control, **kwargs):
         print(f"📢 Epoch {int(state.epoch)} tamamlandı.")
 
-# 10. Trainer'ı başlat
+# 10. Trainer başlat (EarlyStopping eklendi)
 trainer = Trainer(
     model=model,
     args=training_args,
     train_dataset=train_dataset,
     eval_dataset=test_dataset,
     compute_metrics=compute_metrics,
-    callbacks=[PrintCallback()]
+    callbacks=[
+        PrintCallback(),
+        EarlyStoppingCallback(early_stopping_patience=2)  # ⬅️ Yeni eklendi
+    ]
 )
 
 # 11. Eğitim başlat

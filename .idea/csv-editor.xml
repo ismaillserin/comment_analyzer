@@ -3,7 +3,14 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="/amazon_reviews_roberta_sentiment.csv">
+        <entry key="/Test_Yorumlar_.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/all_test_reviews_predicted.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -17,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/amazon_reviews_roberta_sentiment10.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/amazon_reviews_roberta_sentiment2.csv">
           <value>
             <Attribute>
@@ -24,70 +38,56 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/datascraping/english_reviews.csv">
+        <entry key="/amazon_reviews_roberta_sentiment3.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/datascraping/filtered_multi_lang_reviews.csv">
+        <entry key="/amazon_reviews_roberta_sentiment4.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/datascraping/multilingual_reviews/reviews_de.csv">
+        <entry key="/amazon_reviews_roberta_sentiment7.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/datascraping/multilingual_reviews/reviews_es.csv">
+        <entry key="/amazon_reviews_roberta_sentiment8.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/datascraping/multilingual_reviews/reviews_fr.csv">
+        <entry key="/reviews/de_it_fr_es_reviews.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/datascraping/ru_ar_ja_reviews.csv">
+        <entry key="/reviews/en_reviews.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/datascraping/turkish_sentiment_24k.csv">
+        <entry key="/reviews/ru_ar_ja_reviews.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/english_sentiment_sample.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/english_sentiment_sample_exact.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/turkce_yorumlar.csv">
+        <entry key="/reviews/tr_reviews.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
